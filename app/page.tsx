@@ -50,7 +50,7 @@ const birthChange = ((e: React.ChangeEvent<HTMLInputElement>)=>{
   <>
   <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100">
   
-<Image width={300} height={300} className='mb-5 mt-5' src="/Images/sky.png" alt="하늘" rel="1" />
+{/* <Image width={300} height={300} className='mb-5 mt-5' src="/Images/sky.png" alt="하늘"  /> */}
   <div className='border-2 bg-[#DDF2FF]] border-blue-500 p-8 rounded-md shadow-lg space-y-4'>
  
   <div className="flex items-center space-x-4">
