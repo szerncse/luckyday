@@ -17,6 +17,8 @@ interface today{
 
 
 export default function Home() {
+
+
 const [gender, setGender] = useState<string>("");
 const [birthDate, setBirthDate] = useState<string>("");
 const [month ,setMonth] = useState<string>("1"); 
@@ -34,6 +36,8 @@ const fetchData = async () =>{
   setResultTomorrow(data.result.tomorrow);
   setResultMonth(data.result.month)
 
+ 
+
   console.log(data)
 }
 
@@ -48,12 +52,12 @@ const birthChange = ((e: React.ChangeEvent<HTMLInputElement>)=>{
   return (
 
   <>
-  <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100">
+  <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 ">
   
-{/* <Image width={300} height={300} className='mb-5 mt-5' src="/Images/sky.png" alt="하늘"  /> */}
-  <div className='border-2 bg-[#DDF2FF]] border-blue-500 p-8 rounded-md shadow-lg space-y-4'>
+<Image width={300} height={300} className='mb-5 mt-5' src="/Images/sky.png" alt="하늘"  />
+  <div className='border-2 bg-[#DDF2FF]] border-blue-500 p-8 rounded-md shadow-lg space-y-4 mb-5'>
  
-  <div className="flex items-center space-x-4">
+  <div className="flex items-center space-x-4 ">
     <span className="font-bold">성별</span>
     <button  className={`px-2 py-1 text-white rounded-md ${gender === "m" ? "bg-blue-500" : "bg-blue-400 hover:bg-blue-500"}`} onClick={()=> setGender("m")}>남자</button>
     <button  className={`px-2 py-1 text-white rounded-md ${gender === "f" ? "bg-blue-500" : "bg-blue-400 hover:bg-blue-500"}`} onClick={()=> setGender("f")}>여자</button>
@@ -91,9 +95,10 @@ const birthChange = ((e: React.ChangeEvent<HTMLInputElement>)=>{
       <option value="11">21:30 ~ 23:29</option>
     </select>
   </div>
-  <button type="button" className="text-white bg-blue-400 hover:bg-blue-500  focus:bg-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={fetchData}>확인</button>
-
-  <div>
+    </div>
+  <button type="button" className="text-white bg-blue-400 hover:bg-blue-500  focus:bg-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={fetchData}>{resultToday ? '결과': '확인'}</button>
+   
+  <div className='border-2 bg-[#DDF2FF]] border-blue-500 p-8 rounded-md shadow-lg space-y-4'>
     {/* <p className="font-bold">성별 : {gender}</p>
     <p className="font-bold">생년월일 : {birthDate}</p>
     <p className="font-bold">달: {month}</p>
@@ -102,7 +107,7 @@ const birthChange = ((e: React.ChangeEvent<HTMLInputElement>)=>{
     
   {resultToday && (
     <>
-      <h2 className="font-bold text-2xl">{resultToday.title}</h2>
+      <h2 className="font-bold text-2xl ">{resultToday.title}</h2>
       <p>{resultToday.date}</p>
       {resultToday.content.map((item, idx) => (
         <div key={idx}>
@@ -112,7 +117,7 @@ const birthChange = ((e: React.ChangeEvent<HTMLInputElement>)=>{
       ))}
      </>
     )}
-    </div>
+   
   </div>
 </div>
 
