@@ -54,7 +54,7 @@ const birthChange = ((e: React.ChangeEvent<HTMLInputElement>)=>{
   <>
   <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 ">
   
-<Image width={300} height={300} className='mb-5 mt-5' src="/Images/sky.png" alt="하늘"  />
+<Image width={300} height={300} className='mb-5 mt-5' src="/images/sky.png" alt="하늘"  />
   <div className='border-2 bg-[#DDF2FF]] border-blue-500 p-8 rounded-md shadow-lg space-y-4 mb-5'>
  
   <div className="flex items-center space-x-4 ">
@@ -98,27 +98,27 @@ const birthChange = ((e: React.ChangeEvent<HTMLInputElement>)=>{
     </div>
   <button type="button" className="text-white bg-blue-400 hover:bg-blue-500  focus:bg-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={fetchData}>{resultToday ? '결과': '확인'}</button>
    
-  <div className='border-2 bg-[#DDF2FF]] border-blue-500 p-8 rounded-md shadow-lg space-y-4'>
     {/* <p className="font-bold">성별 : {gender}</p>
     <p className="font-bold">생년월일 : {birthDate}</p>
     <p className="font-bold">달: {month}</p>
-    <p className="font-bold">시간: {time}</p> */}
+  <p className="font-bold">시간: {time}</p> */}
     
     
   {resultToday && (
     <>
+  <div className='border-2 bg-[#DDF2FF]] border-blue-500 p-8 rounded-md shadow-lg space-y-4'>
       <h2 className="font-bold text-2xl ">{resultToday.title}</h2>
-      <p>{resultToday.date}</p>
+      <p  className="font-bold text-2xl ">{resultToday.date}</p>
       {resultToday.content.map((item, idx) => (
         <div key={idx}>
-          <h3 className='text-bold text-lg'>{item.name}</h3>
+          <h3 className='text-bold text-lg bg-sky-200'>{item.name}</h3>
           <p>{item.desc}</p>
         </div>
       ))}
+  </div>
      </>
     )}
    
-  </div>
 </div>
 
   </>
